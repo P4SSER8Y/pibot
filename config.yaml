@@ -1,0 +1,2 @@
+pibot:
+  pins: {AM2302: 11, SDA: 3, SCL: 5}
