@@ -17,9 +17,9 @@ def handle_clock_server(request):
 
 
 def init_clock_server():
-    rospy.init_node('clock_server')
-    s = rospy.Service('clock_server', srv.clock, handle_clock_server)
-    rospy.loginfo('clock_server initialized')
+    rospy.init_node('srv_clock')
+    s = rospy.Service('srv_clock', srv.clock, handle_clock_server)
+    rospy.loginfo('srv_clock initialized')
 
 
 if __name__ == '__main__':
