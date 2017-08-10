@@ -1,0 +1,6 @@
+<launch>
+    <rosparam file="$(find pibot)/config.yaml" command="load" />
+    
+    <node pkg="pibot" name="srv_clock" type="srv_clock.py" />
+    <node pkg="pibot" name="srv_am2302" type="srv_am2302.py" />
+</launch>
