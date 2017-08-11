@@ -2,7 +2,7 @@
 
 import rospy
 from time import time
-from pibot import srv
+from pibot import srv, msg
 import Adafruit_DHT as dht
 
 
@@ -37,11 +37,19 @@ def main():
 
     s = rospy.Service('srv_am2302', srv.am2302, lambda req: sensor.handler(req)) 
 
-    rate = rospy.Rate(1.0/30)
+    pub = rospy.Publisher('/pibot/air', msg.air, queue_size=5)
+
+    rate = rospy.Rate(1.0/60)  # every minute
     while not rospy.is_shutdown():
-        rate.sleep()
+        ts = sensor.timestamp
         sensor.read()
-        rospy.loginfo('tick')
+        if sensor.timestamp != ts:
+            m = msg.air()
+            m.timestamp = sensor.timestamp
+            m.temperature = sensor.temperature
+            m.humidity = sensor.humidity
+            pub.publish(m)
+        rate.sleep()
 
 
 if __name__ == "__main__":
