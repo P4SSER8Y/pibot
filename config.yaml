@@ -1,2 +1,4 @@
 pibot:
   pins: {AM2302: 26, SDA: 3, SCL: 5, MorseKey: 7}
+  mongodb_port: 31234
+
