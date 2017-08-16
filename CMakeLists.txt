@@ -51,6 +51,7 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    air.msg
    gesture.msg
+   touchpad.msg
  )
 
 ## Generate services in the 'srv' folder

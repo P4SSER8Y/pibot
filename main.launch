@@ -4,4 +4,6 @@
     <node pkg="pibot" name="srv_system" type="srv_system.py" />
     <node pkg="pibot" name="srv_am2302" type="srv_am2302.py" />
     <node pkg="pibot" name="log_air" type="log_air.py" />
+    <node pkg="pibot" name="srv_touchpad" type="srv_touchpad.py" />
+    <node pkg="pibot" name="morse_decoder" type="morse_decoder.py" />
 </launch>
