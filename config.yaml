@@ -1,7 +1,9 @@
 pibot:
-  pins: {AM2302: 26, 
-         SDA: 3,
-         SCL: 5,
-         Touchpad: 11}
+  pins: 
+    AM2302      : 26
+    SDA         : 3
+    SCL         : 5
+    Touchpad    : 11
+    gesture_int : 13
   mongodb_port: 31234
 
