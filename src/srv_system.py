@@ -25,7 +25,7 @@ def handle_system_server(request):
 
 
 def init_system_server():
-    rospy.init_node('srv_system')
+    rospy.init_node('system')
     s = rospy.Service('srv_system', srv.system, handle_system_server)
     rospy.loginfo('srv_system initialized')
 

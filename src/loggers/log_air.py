@@ -20,7 +20,7 @@ def init():
     global collection
     collection = db.air
 
-    rospy.init_node('log_air')
+    rospy.init_node('air')
     rospy.Subscriber('/pibot/air', msg.air, callback)
 
 if __name__ == '__main__':

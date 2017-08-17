@@ -7,11 +7,11 @@ from pibot import srv
 
 def get_am2302():
     try:
-        rospy.wait_for_service('srv_am2302', timeout=3)
+        rospy.wait_for_service('/pibot/hardwares/srv_am2302', timeout=3)
     except rospy.ROSException:
         rospy.logerr('404: srv_am2302 not found')
         return None
-    f = rospy.ServiceProxy('srv_am2302', srv.am2302)
+    f = rospy.ServiceProxy('/pibot/hardwares/srv_am2302', srv.am2302)
     try:
         res = f()
     except rospy.ServiceException as err:

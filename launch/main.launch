@@ -1,10 +1,21 @@
 <launch>
     <rosparam file="$(find pibot)/config.yaml" command="load" />
+
+    <group ns="pibot">
+        <group ns="hardwares">
+            <node pkg="pibot" name="system" type="srv_system.py" />
+            <node pkg="pibot" name="am2302" type="srv_am2302.py" />
+            <node pkg="pibot" name="touchpad" type="srv_touchpad.py" />
+            <node pkg="pibot" name="apds9960" type="srv_apds9960.py" />
+        </group>
+
+        <group ns="loggers">
+            <node pkg="pibot" name="air" type="log_air.py" />
+        </group>
     
-    <node pkg="pibot" name="srv_system" type="srv_system.py" />
-    <node pkg="pibot" name="srv_am2302" type="srv_am2302.py" />
-    <node pkg="pibot" name="log_air" type="log_air.py" />
-    <node pkg="pibot" name="srv_touchpad" type="srv_touchpad.py" />
-    <node pkg="pibot" name="srv_apds9960" type="srv_apds9960.py" />
-    <node pkg="pibot" name="morse_decoder" type="morse_decoder.py" />
+        <group ns="processors">
+            <node pkg="pibot" name="morse_decoder" type="morse_decoder.py" />
+        </group>
+    </group>
 </launch>
+
