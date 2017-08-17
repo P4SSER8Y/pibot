@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     apds.setProximityIntLowThreshold(50)
 
-    rospy.init_node('srv_apds9960')
+    rospy.init_node('apds9960')
     pub = rospy.Publisher('/pibot/key', String, queue_size=1)
     apds.enableGestureSensor()
 

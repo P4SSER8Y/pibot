@@ -28,7 +28,7 @@ def init():
     GPIO.setup(pin, GPIO.IN)
     GPIO.add_event_detect(pin, GPIO.BOTH, callback = handler)
 
-    rospy.init_node('srv_touchpad')
+    rospy.init_node('touchpad')
     global pub
     pub = rospy.Publisher('/pibot/touchpad', msg.touchpad, queue_size=10)
 

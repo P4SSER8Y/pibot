@@ -29,7 +29,7 @@ class AM2302:
             self.humidity = h 
 
 def main():
-    rospy.init_node('sensor_am2302')
+    rospy.init_node('am2302')
 
     pin = rospy.get_param('/pibot/pins/AM2302')
     sensor = AM2302(pin)
