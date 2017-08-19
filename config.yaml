@@ -5,5 +5,13 @@ pibot:
     SCL         : 5
     Touchpad    : 11
     gesture_int : 13
+    LCD1602:
+      RS: 15
+      EN: 16
+      DATA:
+        - 29
+        - 31
+        - 33
+        - 35
   mongodb_port: 31234
 
