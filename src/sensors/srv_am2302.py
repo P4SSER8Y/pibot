@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import rospy
-from time import time
+from time import time, sleep
 from pibot import srv, msg
 import Adafruit_DHT as dht
 
@@ -22,7 +22,7 @@ class AM2302:
         return res
 
     def read(self):
-        h, t = dht.read(dht.AM2302, self.pin)
+        h, t = dht.read_retry(dht.AM2302, self.pin)
         if (t is not None) and (h is not None):
             self.timestamp = time()
             self.temperature = t
@@ -40,6 +40,7 @@ def main():
     pub = rospy.Publisher('/pibot/air', msg.air, queue_size=5)
 
     rate = rospy.Rate(1.0/60)  # every minute
+    sleep(5)
     while not rospy.is_shutdown():
         ts = sensor.timestamp
         sensor.read()

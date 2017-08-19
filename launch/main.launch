@@ -16,6 +16,10 @@
     
         <group ns="processors">
             <node pkg="pibot" name="morse_decoder" type="morse_decoder.py" />
+            <node pkg="pibot" name="windows_manager" type="windows_manager.py" />
+            <group ns="screens">
+                <node pkg="pibot" name="clock" type="screen_clock.py" />
+            </group>
         </group>
     </group>
 </launch>
