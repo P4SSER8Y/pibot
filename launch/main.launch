@@ -16,6 +16,7 @@
 
         <group ns="processors">
             <node pkg="pibot" name="morse_decoder" type="morse_decoder.py" />
+            <node pkg="pibot" name="input" type="screen_input.py" />
         </group>
 
         <group ns="screens">
