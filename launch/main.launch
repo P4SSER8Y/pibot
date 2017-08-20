@@ -13,13 +13,14 @@
         <group ns="loggers">
             <node pkg="pibot" name="air" type="log_air.py" />
         </group>
-    
+
         <group ns="processors">
             <node pkg="pibot" name="morse_decoder" type="morse_decoder.py" />
+        </group>
+
+        <group ns="screens">
             <node pkg="pibot" name="windows_manager" type="windows_manager.py" />
-            <group ns="screens">
-                <node pkg="pibot" name="clock" type="screen_clock.py" />
-            </group>
+            <node pkg="pibot" name="clock" type="screen_clock.py" />
         </group>
     </group>
 </launch>
