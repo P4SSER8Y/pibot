@@ -59,6 +59,7 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    system.srv
    am2302.srv
+   msgbox.srv
  )
 
 ## Generate actions in the 'action' folder

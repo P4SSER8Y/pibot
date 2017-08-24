@@ -22,6 +22,7 @@
         <group ns="screens">
             <node pkg="pibot" name="windows_manager" type="windows_manager.py" />
             <node pkg="pibot" name="clock" type="screen_clock.py" />
+            <node pkg="pibot" name="msgbox" type="screen_msgbox.py" />
         </group>
     </group>
 </launch>
