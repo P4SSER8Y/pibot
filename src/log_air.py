@@ -1,14 +1,18 @@
 #!/usr/bin/env python
 
 import rospy
+import pytz
+from datetime import datetime
 from pymongo import MongoClient
 from pibot import msg
 
 global collection 
 
+tz = pytz.timezone('Asia/Shanghai')
+
 def callback(data):
     global collection
-    collection.insert({'timestamp': data.timestamp,
+    collection.insert({'time': datetime.fromtimestamp(data.timestamp).replace(tzinfo=tz),
                        'temperature': data.temperature,
                        'humidity': data.humidity})
 
